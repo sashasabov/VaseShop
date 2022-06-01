@@ -1,5 +1,3 @@
-const res = require('express/lib/response');
-const { rawListeners } = require('../models/products');
 const Product = require('../models/products');
 
 
@@ -20,35 +18,102 @@ Product.findById(req.params.id, (err, product) =>{
         return
     }
     console.log(product.qty);
-    // console.log(req.body.qty);
     res.render('products/show',{
         product: product,
         id: req.params.id
     } )
-    console.log(product.qty);
+   
 })
 }
+
 
 let newForm = (req, res) => {
     res.render('products/new')
 }
 
 
-let updateForm = (req, res) =>{
+let editForm = (req, res) =>{
     Product.findById(req.params.id, (err, product) =>{
         if (err){
             console.log(err.message)
             return
     }
-    res.render('products/edit', {product: product})
+    res.render('products/edit', {
+        product: product,
+        id: req.params.id
+    })
 })
 }
+
+let deleteOne = (req, res) => {
+    Product.findByIdAndDelete(req.params.id, (err, product) => {
+            if (err){
+                res.status(400).json(err)
+                return
+            }
+            console.log('item deleted')
+            res.redirect('/products')
+        })
+    }
+
+let update = (req, res) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, 
+        {new:true}, (err, product) => {
+            if(err){
+                res.status(400).json(err)
+                return
+            }
+            res.redirect('/products')
+        } )
+}
+
+let create = (req, res) => {
+    Product.create(req.body, (err, product) => {
+        if (err){
+            res.status(400).json(err)
+            return
+        }
+    res.redirect('/products')
+    })
+}
+
+let buyOne = (req, res) => {
+    Product.findById(req.params.id, (err, product) => {
+            if(err){
+                res.status(400).json(err)
+            return
+            }
+            product.qty -= 1;
+            res.render('products/itembought', {
+                product: product,
+                id: req.params.id,
+                qty: product.qty
+            })
+        })
+}
+
+let oneBought = (req, res) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, {new: true},
+        (err, product) => {
+            if(err){
+                res.status(400).json(err)
+            return
+            }
+            res.redirect('/products')
+        })
+}
+
 
 module.exports = {
         index,
         show,
         newForm,
-        updateForm
+        editForm,
+        deleteOne,
+        update,
+        create,
+        buyOne,
+        oneBought
     }
 
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/mongoose-store', {
+mongoose.connect('mongodb://localhost:27017/mongoose-store-CRUD', {
     useNewUrlParser: true
 })
 

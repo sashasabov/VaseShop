@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lobster&family=Satisfy&display=swap" 
+    rel="stylesheet">
     <title>Show Page</title>
 </head>
+
 <body>
-    <a href="/products">HOME</a>
-    <h1><%=product.name%></h1>
+    <a href="/products">Back to products</a>
+
+    <div class="main" id="form">
+        <div class="show">
+    <h1>"<%=product.name%>"</h1>
     <img src="<%=product.img%>" alt="">
     <h1><%=product.description%></h1>
-    <h1><%=product.price%></h1>
-    <h1><%= product.qty%> remaining</h1>
+    <h1>$<%=product.price%></h1>
 
-
-        <% if (product.qty > 0) { %>
-    <form action="/products/<%= product.id %>">
-        <button action="submit">BUY</button>
-    </form>
-    <% (product.qty = product.qty - 1) } %> 
-
-    <a href="/products/<%=product.id%>/edit">Edit this Product</a>
-
-
+    <% if(product.qty === 0) {%>
+    <h2 style="color: red;">OUT OF STOCK</h2>
+    <%} else {%>
+    <h1><%= product.qty%> items left in stock</h1>
+    <%}%> 
+ 
+    <% if(product.qty > 0){%>
+        <form action="/products/<%=product.id%>/itembought">
+            <button type="submit">BUY</button>
+        </form>
+    <%}%> <br>
+    
+<a style="color: black;" href="/products/<%=product.id%>/edit">Edit this Product</a>
+    
+<form action="/products/<%=product.id%>?_method=DELETE" method="POST">
+        <button type="submit">DELETE</button>
+</form>
+</div>
+</div>
 </body>
 </html>

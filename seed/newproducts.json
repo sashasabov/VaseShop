@@ -1,21 +1,27 @@
 [
-    {
-      "name": "Beans",
-      "description": "A small pile of beans. Buy more beans for a big pile of beans.",
-      "img": "https://cdn3.bigcommerce.com/s-a6pgxdjc7w/products/1075/images/967/416130__50605.1467418920.1280.1280.jpg?c=2",
-      "price": 5,
-      "qty": 99
-    }, {
-      "name": "Bones",
-      "description": "It's just a bag of bones.",
-      "img": "http://bluelips.com/prod_images_large/bones1.jpg",
-      "price": 25,
-      "qty": 0
-    }, {
-      "name": "Bins",
-      "description": "A stack of colorful bins for your beans and bones.",
-      "img": "http://www.clipartbest.com/cliparts/9cz/rMM/9czrMMBcE.jpeg",
-      "price": 7000,
-      "qty":1
-    }
-  ]
+  {
+    "name": "Antique Lemon",
+    "description": "Bright yellow vase, lightweight, made of rare glass",
+    "img": "https://i.imgur.com/C7Ee4kv.jpg",
+    "price": 44.99,
+    "qty": 15
+  }, {
+    "name": "Flowers on Green",
+    "description": "Antique vase with flowers print",
+    "img": "https://i.imgur.com/L5n7hEr.jpg",
+    "price": 990,
+    "qty": 0
+  }, {
+    "name": "Pomegranate Passion",
+    "description": "Red tall and narrow vase",
+    "img": "https://i.imgur.com/7FhHMQ7.jpg",
+    "price": 1499,
+    "qty": 1
+  }, {
+    "name": "Indian Elegance",
+    "description": "1.5ft tall blue-white-red vase",
+    "img": "https://i.imgur.com/Vn9VuCf.jpg",
+    "price": 799,
+    "qty": 2
+  }
+]

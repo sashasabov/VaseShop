@@ -1,14 +1,17 @@
-//const mongoose = require('mongoose');
-const Product = require('../models/products');
+// const mongoose = require('mongoose');
+
 require('../db/connection');
+
+const Product = require('../models/products');
+
 const productseeds = require('./newproducts.json')
 
 Product.deleteMany({})
 .then(() => {
   return Product.insertMany(productseeds)
 })
-.then((products) => {
-  console.log("products created: ", products)
+.then((product) => {
+  console.log("products created: ", product)
 })
 .catch((err) =>{
   console.log(err)

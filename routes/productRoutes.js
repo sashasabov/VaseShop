@@ -1,7 +1,5 @@
 const express = require('express')
 const router = express.Router();
-// const Product = require('../models/products');
-// const newProducts = require('../seed/newproducts');
 const productCtrl = require('../controllers/productController')
 
 
@@ -10,15 +8,22 @@ const productCtrl = require('../controllers/productController')
 //     res.send("Welcome to my store!")
 // })
 
+
 router.get('/', productCtrl.index)
 
 router.get('/new', productCtrl.newForm)
 
-router.get('/:id/edit', productCtrl.updateForm)
+router.get('/:id/edit', productCtrl.editForm)
 
+router.put('/:id', productCtrl.update)
 
+router.delete('/:id', productCtrl.deleteOne)
 
+router.get('/:id/itembought', productCtrl.buyOne)
 
+router.patch('/:id', productCtrl.oneBought)
+
+router.post('/', productCtrl.create)
 
 router.get('/:id', productCtrl.show)
 

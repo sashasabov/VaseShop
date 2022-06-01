@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lobster&family=Satisfy&display=swap" 
+    rel="stylesheet">
+    <title>New Item Page</title>
 </head>
 <body>
-    <h1>Enter New Product</h1>
+    <header class="header"><h1>Enter New Product</h1></header>
+
+    <div class="main" id="form">
+        <div>
+    <form action="/products/" method="POST">
+    
+        <h3> Examples of Links (copy and paste below):</h3>
+        <h4>https://i.imgur.com/4tXzjMr.png</h4>
+        <h4>https://i.imgur.com/WqJ74ET.jpg </h4>
+        
+        <input type="text" name="img" placeholder="Image Link"><br>
+        <input type="text" name="name" placeholder="Name"><br>
+        <input type="text" name="description" placeholder="Description"> <br>
+        <input type="text" name="price" placeholder="Price"><br>
+        <input type="number" name="qty" placeholder="Qty"><br>
+    
+        <button type="submit">SUBMIT</button>
+    </form>
+    </div>
+    </div>
 </body>
 </html>

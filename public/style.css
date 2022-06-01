@@ -1,3 +1,106 @@
 body {
-    background-color:darksalmon;
+    font-family: 'Satisfy', cursive;
+    background-image: url('https://i.imgur.com/cSu2T9J.jpg');
 }
+
+a {
+    color: white;
+    font-size: 2rem;
+    margin-left: 2rem;
+}
+
+a :hover{
+    border: 5px solid black;
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border: 5px solid black;
+    height: 7rem;
+    margin: 2rem 2rem 2rem 2rem;
+    justify-content: center;
+    align-items: baseline;   
+    letter-spacing: 3px;
+}
+
+.shop{
+    font-size: 50px;
+}
+
+#logo {
+    height: 70%;
+    width: 7%;
+    margin-top: 1rem;
+}
+
+.main {
+    background-color: white;
+    border: 5px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+.main > div {
+    /* border: 5px solid black; */
+    text-align: center;
+    margin: 20px;
+}
+
+img {
+    width: 20rem;
+    height: 25rem;
+}
+
+#form {
+    justify-content: center;
+    font-size: 25px;
+}
+
+#edit {
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    
+}
+
+li {
+    width: 50rem;
+    margin-top: 1rem;
+    
+}
+
+label {
+    font-size: 30px;
+    /* margin: 2rem; */
+}
+
+input {
+    width: 100%;
+    margin-block-start: 2rem;
+    height: 2rem;
+    font-size: larger;
+}
+
+button {
+    background-color: black;
+    color:white;
+    height: 4rem;
+    width: 9rem;
+    font-size: larger;
+    font-family: 'Satisfy', cursive;
+    letter-spacing: 4px;
+    margin-top: 3rem;
+}
+
+button:hover {
+    background-color:darkgreen; 
+    color: white;
+  }
+
+h3, h4 {
+    margin: 0.5rem;
+}
+
