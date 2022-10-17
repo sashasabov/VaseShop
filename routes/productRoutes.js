@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router();
 const productCtrl = require('../controllers/productController')
 
-
-
 // router.get('/', (req, res) => {
 //     res.send("Welcome to my store!")
 // })

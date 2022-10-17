@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 const methodOverride = require('method-override')
 const productRoutes = require('./routes/productRoutes');
 //
 // const Product = require('./models/products');
 //
 const path = require('path');
-
 
 // require db connection
 require('./db/connection');
@@ -22,7 +21,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.use('/products', productRoutes);
-
 
 app.listen(PORT, () => {
     console.log(`✅ listening on port: ${PORT} 🌟`);
